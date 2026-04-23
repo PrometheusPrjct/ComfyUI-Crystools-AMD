@@ -1,188 +1,177 @@
-/* Vertical UI */
+/* ============================================================
+   CRYSTOOLS PREMIUM DARK THEME - AMD & HDD COMPACT EDITION
+   ============================================================ */
+
+/* Vertical UI - Menu Lateral e Painel da Direita */
 .comfy-menu, .side-bar-panel {
   #crystools-monitors-root {
-    /*background-color: red;*/
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-    background-color: var(--comfy-menu-bg);
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
+    background-color: #0a0a0c !important; /* Preto Premium Profundo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255,255,255,0.02);
+    border-radius: 12px !important; /* Bordas bem arredondadas */
+    border: 1px solid #2a2a2e !important;
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin: 7px;
-    padding: 5px 0;
+    margin: 6px auto;
+    padding: 8px 0;
     cursor: crosshair;
 
-    /* MONITORS */
-
+    /* Estilo de cada linha de Monitor (CPU, GPU, RAM, Disco) */
     .crystools-monitor {
       margin: 1px 10px;
-      height: 12px;
+      height: 12px; /* Altura super compacta */
       display: flex;
       align-items: center;
 
+      /* Valor Numérico (ex: 15%) */
       .crystools-text {
-        width: 40px;
-        font-size: 10px;
+        width: 35px;
+        font-size: 9px !important; /* Fonte menor para caber tudo */
         text-align: right;
-        margin-right: 3px;
+        margin-right: 5px;
+        color: #888;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+        font-weight: 500;
 
         &:hover {
-          font-weight: 600;
-          color: var(--input-text);
+          font-weight: 700;
+          color: #fff;
         }
       }
 
+      /* Nome do Monitor (ex: GPU, HDD) */
       .crystools-label {
+        font-size: 9px !important;
+        font-weight: 600;
+        color: #d1d1d1;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
         &:hover {
-          font-weight: 700;
-          color: var(--input-text);
+          font-weight: 800;
+          color: #3a86ff;
         }
       }
     }
 
+    /* Fundo das barras de progresso */
     .crystools-content {
       flex-grow: 1;
       position: relative;
-      background-color: var(--content-hover-bg)
+      background-color: #16161a !important; /* Preto fosco interno */
+      border-radius: 4px;
+      height: 6px; /* Barras finas e elegantes */
+      overflow: hidden;
+      border: 1px solid #222;
     }
 
+    /* O preenchimento da barra (O que se move) */
     .crystools-slider {
       position: absolute;
       height: 100%;
       width: 0;
-      box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
+      /* Gradiente de azul para dar o aspecto premium */
+      background: linear-gradient(90deg, #3a86ff, #00d2ff) !important;
+      box-shadow: 0 0 8px rgba(58, 134, 255, 0.4);
+      border-radius: 4px;
+      transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     .crystools-label {
       position: relative;
       color: var(--input-text);
-      font-size: 10px;
+      font-size: 9px !important;
+      line-height: 12px;
     }
   }
 
-  /* PROGRESS BAR */
-
+  /* BARRA DE PROGRESSO DA FILA (QUEUE) */
   #crystools-progressBar-root {
     cursor: pointer;
-    margin: 0 12px 4px;
-    height: 18px;
+    margin: 4px 12px 8px;
+    height: 16px;
     position: relative;
-    border-radius: 3px;
-    width: 100%;
-    background-color: var(--comfy-input-bg);
+    border-radius: 10px; /* Arredondado */
+    width: auto;
+    background-color: #0a0a0c;
+    border: 1px solid #333;
+    overflow: hidden;
 
     .crystools-slider {
       position: absolute;
       height: 100%;
-      width: 50%;
-      transition: width 0.2s;
-      background-color: green;
-      box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(90deg, #2ecc71, #27ae60) !important; /* Verde */
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .crystools-label {
       position: absolute;
       margin: auto 0;
       width: 100%;
-      color: var(--input-text);
-      font-size: 14px;
+      text-align: center;
+      color: #fff;
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 16px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     }
   }
 }
 
-/* side-bar-panel */
+/* Ajuste específico para o painel lateral quando aberto */
 .side-bar-panel {
   #crystools-monitors-root {
-    width: 230px;
+    width: 90%;
+    max-width: 240px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.comfyui-queue-button {
-  /*width: unset !important;*/
-}
-
-/* Horizontal UI */
+/* UI Horizontal (Barra Superior) */
 #crystools-monitors-root {
-  /*background-color: red;*/
-  /*display: none;*/
   flex-direction: row;
-  /*flex-grow: 5;*/
   justify-content: flex-end;
-  /*flex: auto;*/
   flex-shrink: 1;
-  /*min-width: max-content;*/
-  /*height: 100%;*/
-  /*  max-width: 40vw;*/
-  /*  min-width: 10vw;*/
-  /*gap: 5px;*/
-  /*margin: 0 auto;*/
-  /*align-items: center;*/
-  /*align-self: center;*/
-  /*width: min-content;*/
-  /*width: 100%;*/
   cursor: crosshair;
-  /*margin: 4px 0;*/
-  display: flex; /* by progress bar base */
+  display: flex;
   flex-wrap: wrap;
-  /*flex-direction: row;*/
-  /*justify-content: flex-end;*/
-  /*align-items: center;*/
-  gap: 5px;
+  gap: 8px;
   align-self: center;
+  padding: 4px;
 
   .crystools-monitor {
-    background-color: var(--comfy-input-bg);
+    background-color: #0a0a0c !important;
+    border: 1px solid #2a2a2e;
+    border-radius: 8px; /* Arredondado */
+    padding: 2px 8px;
     position: relative;
+    display: flex;
     align-items: center;
-    flex-direction: row;
-    /*width: 60px;*/
-    /*height: 100%;*/
+    min-width: 60px;
+    height: 20px;
 
     .crystools-text {
-      font-size: 10px;
+      font-size: 9px !important;
+      font-weight: bold;
       text-align: right;
-      margin-left: 3px;
-      position: absolute;
-      font-weight: 100;
-      bottom: 2px;
+      color: #00d2ff;
       z-index: 10;
-
-      /*&:hover {*/
-      /*  font-weight: 600;*/
-      /*  color: var(--input-text);*/
-      /*}*/
     }
 
-    /*.crystools-label {*/
-    /*  &:hover {*/
-    /*    font-weight: 800;*/
-    /*    color: var(--input-text);*/
-    /*  }*/
-    /*}*/
+    .crystools-label {
+      font-size: 9px !important;
+      color: #777;
+      margin-left: 4px;
+      text-transform: uppercase;
+    }
   }
 
   .crystools-content {
-    position: relative;
+    background-color: rgba(255,255,255,0.05);
   }
 
   .crystools-slider {
-    position: absolute;
-    height: 100%;
-    width: 0;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .crystools-label {
-    position: relative;
-    width: 100%;
-    color: var(--input-text);
-    font-weight: 500;
-    font-size: 11px;
-    right: 2px;
-    top: 2px;
-    text-align: right;
+    background: rgba(58, 134, 255, 0.15) !important;
+    border-radius: 8px;
   }
 }
